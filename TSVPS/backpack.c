@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define WEIGHT_PACK 221
+#define WEIGHT_PACK 218 
 #define NUM_PRODUCT 3
 
 struct product {
@@ -51,18 +51,38 @@ void show(int try_my[]) {
 }   
 
 void path(int my[], struct product prod[]) {
+    int name1 = 0;
+    int name2 = 0;
+    int name3 = 0;
     int index = WEIGHT_PACK - 1;
     int new_index = index - 1;
     printf("\nPath\nProd->Price\n");
     while(new_index >= 0) {
         for(int i = NUM_PRODUCT - 1; i >= 0; i--) {
             if((my[index] - prod[i].price) == my[new_index]) {
-                printf("%4d->%5d\n", prod[i].name, prod[i].price);
+                //printf("%4d->%5d\n", prod[i].name, prod[i].price);
+                switch(prod[i].name){
+                    case 1:
+                        name1++;
+                        break;
+                    
+                    case 2:
+                        name2++;
+                        break;
+
+                    case 3:
+                        name3++;
+                        break;
+
+                    default:
+                            break;
+
+                }
                 index = new_index;
                 new_index--;
             }
         }
         new_index--;
     }
-    
+    printf("name1[%d], name2[%d], name3[%d]\n", name1, name2, name3);
 }

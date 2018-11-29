@@ -11,6 +11,12 @@ struct element{
 }graf[REB];
 
 struct {
+    int a;
+    int b;
+}bad[REB];
+int index_bad = 0;
+
+struct {
     int array[100];
     struct element pair[100];
     int size;
@@ -40,10 +46,15 @@ int main(int argc, char const *argv[]) {
     load_GRAF();
     reb_sort();
 
-    for(int i = 0; i < VER; i++)
+    //for(int i = 0; i < VER; i++)
         // printf("%d -> (%d,%d)\n", graf[i].size, graf[i].a, graf[i].b);
 
     alg();
+
+    printf("\nbad_reb\n");
+    for(int i = 0; i < index_bad; i++) {
+        printf("(%d, %d)\n", bad[i].a, bad[i].b);
+    }
 
     return 0;
 }
@@ -110,6 +121,9 @@ void alg() {
                     try.variety[j] = new_variety;
             print_ex_pair();
             print_connect();
+        }else{
+            bad[index_bad].a = A;
+            bad[index_bad++].b = B;
         }
     } 
 }
