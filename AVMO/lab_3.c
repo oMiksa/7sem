@@ -17,12 +17,12 @@ struct point{
     float res;
 };
 
-int a = 0;
+float a = 0;
 
 int main(int argc, char const *argv[]) {
     struct point X;
     struct point X_next;
-    X_next.a = 12;
+    X_next.a = 10;
     X_next.b = 10;
     X_next.res = fu(X_next.a, X_next.b);
     printf("%.3f, %.3f -> %f\n", X_next.a, X_next.b, X_next.res);
@@ -32,7 +32,7 @@ int main(int argc, char const *argv[]) {
             X_next.a = next(X_next).a;
             X_next.b = next(X_next).b;
             X_next.res = fu(X_next.a, X_next.b);
-            printf("*%f, %f -> %f\n", X_next.a, X_next.b, X_next.res);
+            printf("*X_next -> %f, %f -> %f\n", X_next.a, X_next.b, X_next.res);
         }else{
             a = 0;
             X.a = X_next.a;
@@ -42,12 +42,12 @@ int main(int argc, char const *argv[]) {
             X_next.a = next(X).a;
             X_next.b = next(X).b;
             X_next.res = fu(X_next.a, X_next.b);
-            printf("%f, %f -> %f\n", X_next.a, X_next.b, X_next.res);
-            printf("%f, %f -> %f\n", X.a, X.b, X.res);
+            printf("X_next -> %f, %f -> %f\n", X_next.a, X_next.b, X_next.res);
+            printf("X -> %f, %f -> %f\n", X.a, X.b, X.res);
         }
     }while(test(X_next) || test(X) || fabs(X.res - X_next.res) > ACC);
-    printf("%f, %f -> %f\n", X_next.a, X_next.b, X_next.res);
-    printf("%f, %f -> %f\n", X.a, X.b, X.res);
+    printf("resolt:\nX_next -> %f, %f -> %f\n", X_next.a, X_next.b, X_next.res);
+    printf("X -> %f, %f -> %f\n", X.a, X.b, X.res);
     return 0;
 }
 
@@ -61,6 +61,8 @@ struct point next(struct point temp) {
     float pr1 = -2 * temp.a + 8;
     float pr2 = -2 * temp.b + 6;
     struct point new;
+    //printf("X1(%f) + L(%f) * (f`(X1)(%f) + a(%f) * 5)\n", temp.a, L, pr1, a);
+    //printf("X2(%f) + L(%f) * (f`(X2)(%f) + a(%f) * 6)\n", temp.b, L, pr2, a);
     new.a = max(0, temp.a + L * (pr1 + a * 5));
     new.b = max(0, temp.b + L * (pr2 + a * 6));
     return new;
