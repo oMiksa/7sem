@@ -1,18 +1,17 @@
-#Assignments for 7 semester:
+# Assignments for 7 semester:
 
-##TSVPS->Theoty of complex computational processes and structures:
-*
--Sort 
--Backpack
--Bellman_ford 
--Dejkstra 
--Floyd 
--Kraskall
-*
+## TSVPS->Theoty of complex computational processes and structures:
 
-##AVMO->Algorithms and computational optimization methods:
-*
--Gradient methods
--Simulation of 2x2 matrix game
--Jordan-Gauss method
-*
+* Sort
+* Backpack
+* Bellman_ford 
+* Dejkstra 
+* Floyd 
+* Kraskall
+
+
+## AVMO->Algorithms and computational optimization methods:
+
+* Gradient methods
+* Simulation of 2x2 matrix game
+* Jordan-Gauss method
