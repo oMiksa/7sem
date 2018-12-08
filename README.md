@@ -15,3 +15,4 @@
 * Gradient methods
 * Simulation of 2x2 matrix game
 * Jordan-Gauss method
+* Course work - linear programming, duality theory
