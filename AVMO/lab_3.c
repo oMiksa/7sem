@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define L 0.1
+#define L 0.001
 #define ACC 0.0001
 
 float max(float, float);
