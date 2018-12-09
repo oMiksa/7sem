@@ -125,16 +125,19 @@ float rectangle(int i_p, int j_p, int i, int j) {
 }
 
 void Print() {
-    printf("\n==============================================================\n");
+    printf("\n    X1         X2        X3        X4       X5          R\n");
+    printf("===============================================================\n");
     for(int i = 0; i < COLUMN; i++) {
         for(int j = 0; j < ROW; j++) {
             if(j == ROW - 1)
                 printf("| ");
             printf("%9f ", equation[i][j]);
+            if(i == COLUMN - 1 && j == ROW - 1)
+                printf("<-P");
         }
         printf("\n");
     }
-    printf("==============================================================\n");
+    printf("===============================================================\n");
 }
 
 void conclusion() {
